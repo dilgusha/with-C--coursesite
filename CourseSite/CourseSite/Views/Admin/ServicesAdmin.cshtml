@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "ServicesAdmin";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2 style="color:#000; font-weight:600;margin-bottom:50px;">
+    Services
+</h2>
+<div class="ABOUT">
+    <form action="~/Admin/ServicesAdmin" method="post" enctype="multipart/form-data">
+        <div class="form-group col-md-3">
+            <label>OurServiceAboutID</label>
+            <input name="OurServiceAboutID" value="" type="number" class="form-control" />
+        </div>
+        <div class="form-group col-md-3">
+            <label>OurServiceName</label>
+            <input name="OurServiceName" value="" type="text" class="form-control" />
+        </div>
+        <div class="form-group col-md-3">
+            <label>OurServiceAbout</label>
+            <textarea required autocomplete="on" style="width: 230px; height: 100px;" runat="server" class="form-control" rows="3" id="text" name="OurServiceAbout"></textarea>
+        </div>
+
+        <div class="form-group col-md-3">
+            <label>OurServicePhoto</label>
+            <input name="OurServicePhoto" type="file" class="form-control" required autocomplete="on" />
+        </div>
+        <button type="submit" class="btn btn-success" style="margin-top:20px;">Change Button</button>
+    </form>
+</div>
+<style>
+    .ABOUT input {
+        width: 230px;
+        height: 100px;
+    }
+</style>
+

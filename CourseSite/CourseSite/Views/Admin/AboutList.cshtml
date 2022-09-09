@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "AboutList";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>AboutList</h2>
+<div class="panel panel-default">
+    <div class="panel-heading">
+
+    </div>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover portfolio">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Content</th>
+                        <th>Solution</th>
+                        <th>Photo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.AboutID</td>
+                            <td>@item.AboutContent</td>
+                            <td>@item.AboutSolution</td>
+                            <td class="tchr-td-img">
+                                <div>
+                                    <img style="width:50px;" src="~/assets/images/@item.AboutPhoto" />
+                                </div>
+                            </td>
+                            <td style='width: 105px; ' class='text-center'><a href="../../Admin/AboutEdit/@item.AboutID"><i style='margin: 0px 10px; font-size:18px; ' class='fa fa-pencil'></i></a></td>
+                            <td style='width: 105px;' class='text-center'><a href="../../Admin/AboutDelete/@item.AboutID"><i style='margin: 0px 10px; font-size:18px;' class='fa fa-trash-o'></i></a></td>
+
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "ServicesEdit";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@using CourseSite.Models
+@model List<OurService>
+
+<div class="panel panel-default">
+    <div class="container">
+        <div class="panel-body">
+            <form action="~/Admin/ServicesEdit/@Model[0].OurServiceID" method="post" style="width:88%;" enctype="multipart/form-data">
+                <div class="form-group col-md-3">
+                    <label>Accounting</label>
+                    <input name="OurServiceAccounting" value="@Model[0].OurServiceAboutID" type="text" class="form-control" />
+                </div>
+                <div class="form-group col-md-3">
+                    <label>Market</label>
+                    <input name="OurServiceMarket" value="@Model[0].OurServiceName" type="text" class="form-control" />
+                </div>
+                <div class="form-group col-md-3">
+                    <label>Financial</label>
+                    <input name="OurServiceFinancial" value="@Model[0].OurServiceAbout" type="text" class="form-control" />
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label>Photo</label>
+                    <input name="AboutPhoto" value="@Model[0].OurServicePhoto" type="file" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-success" Text="Gonder" style="margin:25px; width:70px; height:35px; color:#fff;">Gonder</button>
+            </form>
+        </div>
+    </div>
+</div>
+

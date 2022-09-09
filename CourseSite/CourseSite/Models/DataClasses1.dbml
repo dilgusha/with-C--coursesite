@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FinanceSite" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-K1MDKNV\SQLEXPRESS;Initial Catalog=FinanceSite;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="FinanceSiteConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.About" Member="Abouts">
+    <Type Name="About">
+      <Column Name="AboutID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AboutContent" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AboutPhoto" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AboutSolution" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Team" Member="Teams">
+    <Type Name="Team">
+      <Column Name="TeamID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TeamAboutID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TeamName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="TeamPosition" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="TeamAbout" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TeamPhoto" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DetailView" Member="DetailViews">
+    <Type Name="DetailView">
+      <Column Name="AboutID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AboutContent" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AboutPhoto" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AboutSolution" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TeamID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TeamAboutID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TeamName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="TeamPosition" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="TeamAbout" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TeamPhoto" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OurService" Member="OurServices">
+    <Type Name="OurService">
+      <Column Name="OurServiceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OurServiceAboutID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OurServiceName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="OurServiceAbout" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OurServicePhoto" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.General" Member="Generals">
+    <Type Name="General">
+      <Column Name="AboutID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AboutContent" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AboutPhoto" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AboutSolution" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OurServiceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OurServiceAboutID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OurServiceName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="OurServiceAbout" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OurServicePhoto" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Info" Member="Infos">
+    <Type Name="Info">
+      <Column Name="InfoID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="InfoPhone" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="InfoEmail" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="InfoLocation" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="InfoPlace" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="InfoFace" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="InfoTwitter" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="infoLink" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Contact" Member="Contacts">
+    <Type Name="Contact">
+      <Column Name="ContactID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ContactName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ContactEmail" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ContactSubject" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ContactMessage" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,194 @@
+﻿
+@{
+    ViewBag.Title = "Services";
+    Layout = "~/Views/Shared/HomeLayout.cshtml";
+}
+
+@using CourseSite.Models;
+@model  List<OurService>
+
+<!-- ***** Preloader Start ***** -->
+<div id="preloader">
+    <div class="jumper">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<!-- ***** Preloader End ***** -->
+<!-- Header -->
+<div class="sub-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-xs-12">
+                <ul class="left-info">
+                    <li><a href="#"><i class="fa fa-clock-o"></i>Mon-Fri 09:00-17:00</a></li>
+                    <li><a href="#"><i class="fa fa-phone"></i>090-080-0760</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul class="right-icons">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<header class="">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><h2>Finance Business</h2></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Home">
+                            Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="About">About Us</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="Services">Our Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Page Content -->
+<div class="page-heading header-text">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Our Services</h1>
+                <span>We are over 20 years of experience</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="single-services">
+    <div class="container">
+        <div class="row" id="tabs">
+            <div class="col-md-4">
+                <ul>
+                    @foreach (var item in Model)
+                    {
+                    <li><a href='#tabs-1'>@item.OurServiceName<i class="fa fa-angle-right"></i></a></li>
+                    @*<li><a href='#tabs-2'>Financial Data <i class="fa fa-angle-right"></i></a></li>
+                    <li><a href='#tabs-3'>Accounting Service <i class="fa fa-angle-right"></i></a></li>
+                    <li><a href='#tabs-4'>Overall Evaluation <i class="fa fa-angle-right"></i></a></li>*@
+                    }
+                </ul>
+            </div>
+            <div class="col-md-8">
+                
+                <section class='tabs-content'>
+                    @foreach (var item in Model)
+                    {
+                        <article id='tabs-1'>
+                            <img src="~/assets/images/single_service_01.jpg" alt="">
+                            <h4>@item.OurServiceName</h4>
+                            <p>
+                                @item.OurServiceAbout
+                            </p>
+                        </article>
+                        @*<article id='tabs-2'>
+                            <img src="~/assets/images/single_service_02.jpg" alt="">
+                            <h4>Financial Data</h4>
+                            <p>
+                            </p>
+                        </article>
+                        <article id='tabs-3'>
+                            <img src="~/assets/images/single_service_03.jpg" alt="">
+                            <h4>Accounting Service</h4>
+                            <p>
+                            </p>
+                        </article>
+                        <article id='tabs-4'>
+                            <img src="~/assets/images/single_service_04.jpg" alt="">
+                            <h4>Overall Evaluation</h4>
+                            <p>
+                            </p>
+                        </article>*@
+                    }
+
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="callback-form callback-services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>Request a <em>call back</em></h2>
+                    <span>interdum nisl ac urna tempor mollis</span>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="contact-form">
+                    <form id="contact" action="" method="post">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+                                <fieldset>
+                                    <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="">
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+                                <fieldset>
+                                    <input name="email" type="text" class="form-control" id="email" placeholder="E-Mail Address" required="">
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+                                <fieldset>
+                                    <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject" required="">
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message" required=""></textarea>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <button type="submit" id="form-submit" class="border-button">Send Message</button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="partners">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="owl-partners owl-carousel">
+                    <div class="partner-item">
+                        <img src="~/assets/images/client-01.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
